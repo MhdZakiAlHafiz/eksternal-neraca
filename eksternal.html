@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Eksternal OPD - Portal Neraca BPS Payakumbuh</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #fffbeb, #fef3c7);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="text-slate-800 min-h-screen flex flex-col antialiased">
+
+    <!-- Header Standalone Eksternal -->
+    <header
+        class="relative overflow-hidden bg-gradient-to-r from-amber-950 via-amber-900 to-amber-950 text-white shadow-xl">
+        <div class="absolute -top-24 -left-20 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 p-0.5 shadow-lg shadow-amber-500/30 flex items-center justify-center">
+                    <div class="w-full h-full bg-slate-950/40 rounded-[14px] flex items-center justify-center">
+                        <i class="fa-solid fa-building-user text-xl text-amber-300"></i>
+                    </div>
+                </div>
+                <div>
+                    <span
+                        class="inline-block text-[11px] font-bold uppercase tracking-wider text-amber-300 bg-amber-950/80 border border-amber-800/60 px-2.5 py-0.5 rounded-full mb-1">
+                        BPS Kota Payakumbuh
+                    </span>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">Direktori Data Eksternal /
+                        OPD</h1>
+                </div>
+            </div>
+
+            <div class="text-right hidden md:block">
+                <p class="text-xs text-amber-200 font-medium">Akses Langsung Folder Eksternal</p>
+                <span class="text-[11px] text-amber-400/80 font-mono">19 Instansi Terdaftar</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container Utama -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
+
+        <!-- Top Filter Header -->
+        <div
+            class="flex flex-col md:flex-row md:items-center justify-between border-b border-amber-200/80 pb-5 mb-8 gap-4">
+            <div>
+                <h2 class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
+                    <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                    Folder Google Drive Eksternal
+                </h2>
+                <p class="text-xs text-slate-600 mt-1">Klik pada salah satu kartu instansi untuk langsung membuka tautan
+                    folder Google Drive yang bersangkutan.</p>
+            </div>
+
+            <!-- Search Input -->
+            <div class="relative w-full md:w-80">
+                <i
+                    class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                <input type="text" id="searchOpd" placeholder="Cari nama dinas atau instansi..."
+                    class="w-full pl-9 pr-4 py-2.5 bg-white rounded-xl border border-amber-200/80 shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+            </div>
+        </div>
+
+        <!-- Grid 5 Card per Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5" id="opdGrid">
+
+            <!-- 1. Distan -->
+            <a href="https://drive.google.com/drive/folders/1kf87wrSg-KeWOaJzTIzujlaJDhQlIMvU" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Distan
+                    </h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Tanaman Pangan, Perkebunan,
+                        Peternakan, Perikanan</p>
+                </div>
+            </a>
+
+            <!-- 2. UPTD -->
+            <a href="https://drive.google.com/drive/folders/1pHXCO6ECIXaDBOqVFwjKl19lWyde8RUX" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">UPTD</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Penyuluh Kementan - Data
+                        Hortikultura</p>
+                </div>
+            </a>
+
+            <!-- 3. Dinas Ketapang -->
+            <a href="https://drive.google.com/drive/folders/1ELlt86es9dR8wwrK1rTsqKRemT_DCxGo" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-bowl-rice"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Dinas
+                        Ketapang</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Ketahanan Pangan Kota Payakumbuh
+                    </p>
+                </div>
+            </a>
+
+            <!-- 4. PUPR -->
+            <a href="https://drive.google.com/drive/folders/1rGr0erNT-wkZLFWJt0d89EjYhkj6bONM" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-trowel-bricks"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">PUPR</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Pekerjaan Umum & Penataan Ruang
+                    </p>
+                </div>
+            </a>
+
+            <!-- 5. DPMPTSP -->
+            <a href="https://drive.google.com/drive/folders/14w7Prj6ahwyW4kfb0gGUACvnkcC9tSQw" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">DPMPTSP
+                    </h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Penanaman Modal & Pelayanan
+                        Terpadu</p>
+                </div>
+            </a>
+
+            <!-- 6. PERKIM -->
+            <a href="https://drive.google.com/drive/folders/1Bwo9qxpAeZ0hMfQYtlERfBij3NbtDtMF" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">PERKIM
+                    </h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Perumahan Rakyat & Kawasan
+                        Permukiman</p>
+                </div>
+            </a>
+
+            <!-- 7. Koperasi UMKM -->
+            <a href="https://drive.google.com/drive/folders/1lL3zp6RDxRkSmU49ofYcMEFj5I6pRGf8" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Koperasi
+                        UMKM</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Dinas Koperasi & Usaha Kecil
+                        Menengah</p>
+                </div>
+            </a>
+
+            <!-- 8. Dinas Perindustrian -->
+            <a href="https://drive.google.com/drive/folders/1AV8Xp5dZHURlfP674x6aXEJ1i4oU2jrT" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Dinas
+                        Perindustrian</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Tenaga Kerja & Sektor
+                        Perindustrian</p>
+                </div>
+            </a>
+
+            <!-- 9. Dinas Perhubungan -->
+            <a href="https://drive.google.com/drive/folders/1g1MoWFUVAUT_6twM7ehokG50qNpHVuRt" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-bus"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Dinas
+                        Perhubungan</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Sektor Transportasi & Lalu
+                        Lintas</p>
+                </div>
+            </a>
+
+            <!-- 10. Dinas Pendidikan -->
+            <a href="https://drive.google.com/drive/folders/1pCGU575a5pRt5RLKK9ORMTR7GYkCNjmQ" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Dinas
+                        Pendidikan</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Data Pendidikan & Sekolah Daerah
+                    </p>
+                </div>
+            </a>
+
+            <!-- 11. Dinas Kesehatan -->
+            <a href="https://drive.google.com/drive/folders/1KQyAMwcCmISGBvdWn1O5Y3lFQfzfrPLz" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Dinas
+                        Kesehatan</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Fasilitas & Data Kesehatan
+                        Masyarakat</p>
+                </div>
+            </a>
+
+            <!-- 12. Pariwisata dan Olahraga -->
+            <a href="https://drive.google.com/drive/folders/1QisXabNP34J2btPlDEW43ajP_iBVmDqV" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-person-hiking"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Pariwisata
+                        & Olahraga</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Disparpora Kota Payakumbuh</p>
+                </div>
+            </a>
+
+            <!-- 13. BKPSDM -->
+            <a href="https://drive.google.com/drive/folders/1M5nYmOxNeN6LVpWskcr7LOT8U60J12Pd" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">BKPSDM
+                    </h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Kepegawaian & Pengembangan SDM
+                    </p>
+                </div>
+            </a>
+
+            <!-- 14. RS (Rumah Sakit) -->
+            <a href="https://drive.google.com/drive/folders/1CW0sReeDMdM9w3VD7aPOAXyCUc7CjurV" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-hospital"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">RS (Rumah
+                        Sakit)</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Layanan & Statistik Rumah Sakit
+                    </p>
+                </div>
+            </a>
+
+            <!-- 15. Bank -->
+            <a href="https://drive.google.com/drive/folders/1ApXLOCdBDNEGeVqshBWF6Q6zVSuoeCk-" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Bank</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Laporan Perbankan & Keuangan</p>
+                </div>
+            </a>
+
+            <!-- 16. Telkom -->
+            <a href="https://drive.google.com/drive/folders/15awLTtpfdGhoZJybsPvgkNaa40IAj9oC" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-tower-cell"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">Telkom
+                    </h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Infrastruktur Telekomunikasi</p>
+                </div>
+            </a>
+
+            <!-- 17. BPJS -->
+            <a href="https://drive.google.com/drive/folders/1xHfbXrr5vuv_soUR146juYK7xFtywbsD" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">BPJS</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Jaminan Kesehatan &
+                        Ketenagakerjaan</p>
+                </div>
+            </a>
+
+            <!-- 18. PDAM -->
+            <a href="https://drive.google.com/drive/folders/1hSzkJUNbrNA3wh0R4uCuFamYtj0x7kMX" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">PDAM</h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Data Distribusi Air Bersih</p>
+                </div>
+            </a>
+
+            <!-- 19. BKD (LRA) -->
+            <a href="https://drive.google.com/drive/folders/1hwtW148VXNk-3htGM2EFvHLmsE1LLua5" target="_blank"
+                rel="noopener noreferrer"
+                class="opd-card glass-card p-5 rounded-2xl border border-amber-200/70 shadow-sm hover:shadow-xl hover:shadow-amber-500/10 hover:border-amber-400 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                </div>
+                <div class="flex items-start justify-between mb-3">
+                    <div
+                        class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-lg group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-file-circle-minus"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 group-hover:text-amber-600 transition-colors"><i
+                            class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-900 text-sm group-hover:text-amber-700 transition-colors">BKD (LRA)
+                    </h3>
+                    <p class="text-[11px] text-slate-500 mt-1 leading-snug font-medium">Laporan Realisasi Anggaran
+                        Daerah</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="mt-auto bg-white/70 backdrop-blur-md border-t border-amber-200/60 py-6 text-center text-xs text-slate-500 font-medium">
+        <p>© 2026 Badan Pusat Statistik Kota Payakumbuh — Portal Neraca</p>
+    </footer>
+
+    <!-- Search Script -->
+    <script>
+        document.getElementById('searchOpd').addEventListener('keyup', function (e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.opd-card');
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
